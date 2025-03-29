@@ -1,6 +1,15 @@
 import { CreateCalibratorController } from "./create-calibrator"
-import { ReqWithoutCode, ReqWithoutStatus, ReqWithoutModel, ReqWithoutCertificate, ReqWithoutSerialNumber, ReqWithoutDescription } from './mocks/create-calibrator/'
-import { ReqWithoutCalibrationDate } from "./mocks/create-calibrator/without-calibration-date"
+import {
+    ReqWithoutCode,
+    ReqWithoutStatus,
+    ReqWithoutModel,
+    ReqWithoutCertificate,
+    ReqWithoutSerialNumber,
+    ReqWithoutDescription,
+    ReqWithoutCalibrationDate,
+    ReqWithoutCalibrationFrequency
+} from './mocks/create-calibrator/'
+
 const createCalibratorController = new CreateCalibratorController()
 
 describe("CreateCalibratorController", () => {
@@ -56,5 +65,13 @@ describe("CreateCalibratorController", () => {
         const response = await createCalibratorController.handle(ReqWithoutCalibrationDate)
         expect(response.statusCode).toBe(400)
         expect(response.body.error).toEqual(new Error('Missing param: calibrationDate'))
+    })
+})
+
+describe("CreateCalibratorController", () => {
+    test("Should return 400 if calibration frquency is no provided", async () => {
+        const response = await createCalibratorController.handle(ReqWithoutCalibrationFrequency)
+        expect(response.statusCode).toBe(400)
+        expect(response.body.error).toEqual(new Error('Missing param: calibrationFrequency'))
     })
 })
