@@ -1,9 +1,8 @@
-export const CompleteReq = {
+export const ReqWithoutCertificate = {
     body: {
         code: "any_code", //ok
         status: "any_status", //ok
         model: "any_model", //ok
-        certificate: "any_certificate", //ok
         serieNumber: "any_serial_number",
         description: "any_description",
         calibrationCate: "any_calibration_date",
