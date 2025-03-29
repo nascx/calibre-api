@@ -3,7 +3,7 @@ export const ReqWithoutModel = {
         code: "any_code",
         status: "any_status",
         certificate: "any_certificate",
-        serieNumber: "any_serial_number",
+        serialNumber: "any_serial_number",
         description: "any_description",
         calibrationCate: "any_calibration_date",
         calibrationFrequency: "any_calibration_frequency",

@@ -1,9 +1,9 @@
-export const ReqWithoutCode = {
+export const ReqWithoutSerialNumber = {
     body: {
-        status: "any_status",
-        model: "any_model",
-        certificate: "any_certificate",
-        serialNumber: "any_serial_number",
+        code: "any_code", //ok
+        status: "any_status", //ok
+        model: "any_model", //ok
+        certificate: "any_certificate", //ok
         description: "any_description",
         calibrationCate: "any_calibration_date",
         calibrationFrequency: "any_calibration_frequency",
