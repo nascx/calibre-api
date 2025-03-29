@@ -5,7 +5,7 @@ export const ReqWithoutSerialNumber = {
         model: "any_model", //ok
         certificate: "any_certificate", //ok
         description: "any_description",
-        calibrationCate: "any_calibration_date",
+        calibrationDate: "any_calibration_date",
         calibrationFrequency: "any_calibration_frequency",
         nextCalibraton: "any_next_calibration",
         toleranceProcess: "any_tolerance_process",

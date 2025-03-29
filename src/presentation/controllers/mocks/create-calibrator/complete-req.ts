@@ -6,7 +6,7 @@ export const CompleteReq = {
         certificate: "any_certificate", //ok
         serialNumber: "any_serial_number", //ok
         description: "any_description", //ok
-        calibrationCate: "any_calibration_date",
+        calibrationDate: "any_calibration_date", //ok
         calibrationFrequency: "any_calibration_frequency",
         nextCalibraton: "any_next_calibration",
         toleranceProcess: "any_tolerance_process",
