@@ -6,7 +6,7 @@ export class CreateCalibratorController implements Controller {
 
     handle = async (req: HttpRequest): Promise<HttpResponse> => {
 
-        const requiredFields = ["code", "status"]
+        const requiredFields = ["code", "status", "model", "certificate"]
 
         for (const field of requiredFields) {
             if (!req.body[field]) {
