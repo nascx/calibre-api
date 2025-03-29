@@ -1,5 +1,6 @@
 import { CreateCalibratorController } from "./create-calibrator"
 import { ReqWithoutCode, ReqWithoutStatus, ReqWithoutModel, ReqWithoutCertificate, ReqWithoutSerialNumber, ReqWithoutDescription } from './mocks/create-calibrator/'
+import { ReqWithoutCalibrationDate } from "./mocks/create-calibrator/without-calibration-date"
 const createCalibratorController = new CreateCalibratorController()
 
 describe("CreateCalibratorController", () => {
@@ -47,5 +48,13 @@ describe("CreateCalibratorController", () => {
         const response = await createCalibratorController.handle(ReqWithoutDescription)
         expect(response.statusCode).toBe(400)
         expect(response.body.error).toEqual(new Error('Missing param: description'))
+    })
+})
+
+describe("CreateCalibratorController", () => {
+    test("Should return 400 if calibration date is no provided", async () => {
+        const response = await createCalibratorController.handle(ReqWithoutCalibrationDate)
+        expect(response.statusCode).toBe(400)
+        expect(response.body.error).toEqual(new Error('Missing param: calibrationDate'))
     })
 })
