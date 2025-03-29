@@ -1,5 +1,5 @@
 import { CreateCalibratorController } from "./create-calibrator"
-import { ReqWithoutCode, ReqWithoutStatus, ReqWithoutModel, ReqWithoutCertificate, ReqWithoutSerialNumber } from './mocks/create-calibrator/'
+import { ReqWithoutCode, ReqWithoutStatus, ReqWithoutModel, ReqWithoutCertificate, ReqWithoutSerialNumber, ReqWithoutDescription } from './mocks/create-calibrator/'
 const createCalibratorController = new CreateCalibratorController()
 
 describe("CreateCalibratorController", () => {
@@ -39,5 +39,13 @@ describe("CreateCalibratorController", () => {
         const response = await createCalibratorController.handle(ReqWithoutSerialNumber)
         expect(response.statusCode).toBe(400)
         expect(response.body.error).toEqual(new Error('Missing param: serialNumber'))
+    })
+})
+
+describe("CreateCalibratorController", () => {
+    test("Should return 400 if description is no provided", async () => {
+        const response = await createCalibratorController.handle(ReqWithoutDescription)
+        expect(response.statusCode).toBe(400)
+        expect(response.body.error).toEqual(new Error('Missing param: description'))
     })
 })
