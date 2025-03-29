@@ -1,4 +1,4 @@
-export const CompleteReq = {
+export const ReqWithoutNextCalibration = {
     body: {
         code: "any_code", //ok
         status: "any_status", //ok
@@ -8,7 +8,6 @@ export const CompleteReq = {
         description: "any_description", //ok
         calibrationDate: "any_calibration_date", //ok
         calibrationFrequency: "any_calibration_frequency", //ok
-        nextCalibraton: "any_next_calibration", //ok
         toleranceProcess: "any_tolerance_process",
         observation: "any_observation",
         entryDate: "any_entry_date",

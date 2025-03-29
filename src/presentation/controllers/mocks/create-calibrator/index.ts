@@ -6,6 +6,7 @@ import { ReqWithoutSerialNumber } from './without-serial-number'
 import { ReqWithoutDescription } from './without-description'
 import { ReqWithoutCalibrationDate } from './without-calibration-date'
 import { ReqWithoutCalibrationFrequency } from './without-calibration-frequency.ts'
+import { ReqWithoutNextCalibration } from './without-next-calibration'
 
 export {
     ReqWithoutCode,
@@ -15,5 +16,6 @@ export {
     ReqWithoutSerialNumber,
     ReqWithoutDescription,
     ReqWithoutCalibrationDate,
-    ReqWithoutCalibrationFrequency
+    ReqWithoutCalibrationFrequency,
+    ReqWithoutNextCalibration
 }

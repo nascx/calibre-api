@@ -14,7 +14,8 @@ export class CreateCalibratorController implements Controller {
             "serialNumber",
             "description",
             "calibrationDate",
-            "calibrationFrequency"
+            "calibrationFrequency",
+            "nextCalibration"
         ]
 
         for (const field of requiredFields) {
