@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Calibrator {
+  id           Int    @id @default(autoincrement())
+  code         String
+  model        String
+  status       String
+  certificate  String
+  serialNumber String
+  description  String
+  observation  String
+
+  calibrationData   CalibrationData @relation(fields: [calibrationDataId], references: [id])
+  calibrationDataId Int             @unique
+
+  locationData   LocationData @relation(fields: [locationDataId], references: [id])
+  locationDataId Int          @unique
+}
+
+model CalibrationData {
+  id             Int      @id @default(autoincrement())
+  calibratorCode String
+  date           DateTime
+  frequency      String
+  next           DateTime
+
+  calibrator Calibrator?
+}
+
+model LocationData {
+  id             Int      @id @default(autoincrement())
+  calibratorCode String
+  entryDate      DateTime
+  leaveDate      DateTime
+  location       String
+  department     String
+  observation    String
+
+  calibrator Calibrator?
+}
