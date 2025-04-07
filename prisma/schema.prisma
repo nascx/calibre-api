@@ -14,8 +14,8 @@ datasource db {
 }
 
 model Calibrator {
-  id           Int    @id @default(autoincrement())
-  code         String
+  id           Int    @default(autoincrement())
+  code         String @id
   model        String
   status       String
   certificate  String
@@ -31,20 +31,21 @@ model Calibrator {
 }
 
 model CalibrationData {
-  id             Int      @id @default(autoincrement())
-  calibratorCode String
-  date           DateTime
-  frequency      String
-  next           DateTime
+  id               Int    @id @default(autoincrement())
+  calibratorCode   String
+  date             String
+  frequency        String
+  next             String
+  toleranceProcess String
 
   calibrator Calibrator?
 }
 
 model LocationData {
-  id             Int      @id @default(autoincrement())
+  id             Int    @id @default(autoincrement())
   calibratorCode String
-  entryDate      DateTime
-  leaveDate      DateTime
+  entryDate      String
+  leaveDate      String
   location       String
   department     String
   observation    String

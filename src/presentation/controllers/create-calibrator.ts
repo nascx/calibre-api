@@ -23,17 +23,18 @@ export class CreateCalibratorController implements Controller {
             const createdCalibrationData = await prisma.calibrationData.create({
                 data: {
                     calibratorCode: code,
-                    date: new Date(calibrationData.date),
+                    date: calibrationData.date,
                     frequency: calibrationData.frequency,
-                    next: new Date(calibrationData.next),
+                    next: calibrationData.next,
+                    toleranceProcess: calibrationData.toleranceProcess
                 },
             })
 
             const createdLocationData = await prisma.locationData.create({
                 data: {
                     calibratorCode: code,
-                    entryDate: new Date(locationData.entryDate),
-                    leaveDate: new Date(locationData.leaveDate),
+                    entryDate: locationData.entryDate,
+                    leaveDate: locationData.leaveDate,
                     location: locationData.location,
                     department: locationData.department,
                     observation: locationData.observation,
@@ -63,6 +64,7 @@ export class CreateCalibratorController implements Controller {
                 body: calibrator
             }
         } catch (error) {
+            console.log(error)
             return {
                 statusCode: 500,
                 body: { error: 'Erro ao criar calibrador' }
