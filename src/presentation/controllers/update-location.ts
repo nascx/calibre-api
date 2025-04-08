@@ -47,7 +47,7 @@ export class UpdateLocationController implements Controller {
                     department: newDepartment,
                     entryDate: formattedDate,
                     leaveDate: 'hoje',
-                    observation: observation
+                    observation: observation || 'N/A'
                 }
             });
 
