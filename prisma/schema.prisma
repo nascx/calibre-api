@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://root:Helpdesk4202@10.12.100.156:3306/calibre"
 }
 
 model Calibrator {
