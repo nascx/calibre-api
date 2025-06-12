@@ -5,7 +5,9 @@ import { HttpRequest, HttpResponse } from '../protocols/http'
 const prisma = new PrismaClient()
 
 export class GetAllCalibratorsController implements Controller {
+
     handle = async (req: HttpRequest): Promise<HttpResponse> => {
+        console.log("Função de pegar todos os calibradores foi chamada")
         try {
             const calibrators = await prisma.calibrator.findMany({
                 include: {

@@ -15,6 +15,7 @@ export class UpdateCalibrationController implements Controller {
                 newFrequency,
                 nextCalibration,
                 toleranceProcess,
+                toleranceEquipment
             } = req.body;
 
             console.log(newFrequency)
@@ -37,7 +38,8 @@ export class UpdateCalibrationController implements Controller {
                     date: date,
                     frequency: newFrequency,
                     next: nextCalibration,
-                    toleranceProcess: toleranceProcess
+                    toleranceProcess: toleranceProcess,
+                    toleranceEquipment: toleranceEquipment
                 },
                 include: {
                     calibrator: true

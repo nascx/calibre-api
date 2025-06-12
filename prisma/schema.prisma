@@ -37,6 +37,7 @@ model CalibrationData {
   frequency        String
   next             String
   toleranceProcess String
+  toleranceEquipment String
 
   calibrator Calibrator?
 }

@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 export class CreateCalibratorController implements Controller {
 
     handle = async (req: HttpRequest): Promise<HttpResponse> => {
+        console.log('Função de criar foi chamada')
         try {
             const {
                 code,
@@ -26,7 +27,8 @@ export class CreateCalibratorController implements Controller {
                     date: calibrationData.date,
                     frequency: calibrationData.frequency,
                     next: calibrationData.next,
-                    toleranceProcess: calibrationData.toleranceProcess
+                    toleranceProcess: calibrationData.toleranceProcess,
+                    toleranceEquipment: calibrationData.toleranceEquipment
                 },
             })
 
